@@ -435,24 +435,39 @@ function initializeHeroActions() {
 // Initialize scroll to top
 function initializeScrollToTop() {
     const scrollTopBtn = document.getElementById('scrollTopBtn');
+    const whatsappBtn = document.querySelector('.whatsapp-float');
 
-    if (scrollTopBtn) {
-        // Show/hide button on scroll
+    if (scrollTopBtn || whatsappBtn) {
+        // Show/hide buttons on scroll
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                scrollTopBtn.classList.add('visible');
-            } else {
-                scrollTopBtn.classList.remove('visible');
+            const shouldShow = window.scrollY > 300;
+
+            if (scrollTopBtn) {
+                if (shouldShow) {
+                    scrollTopBtn.classList.add('visible');
+                } else {
+                    scrollTopBtn.classList.remove('visible');
+                }
+            }
+
+            if (whatsappBtn) {
+                if (shouldShow) {
+                    whatsappBtn.classList.add('visible');
+                } else {
+                    whatsappBtn.classList.remove('visible');
+                }
             }
         });
 
         // Scroll to top on click
-        scrollTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
+        if (scrollTopBtn) {
+            scrollTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
             });
-        });
+        }
     }
 }
 
