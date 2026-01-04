@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نظام حل المنازعات الأكاديمي - حماية المجتمع الأكاديمي</title>
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Meta Tags -->
+    <meta name="description" content="منصة متخصصة في حل المنازعات والنزاعات في المجال الأكاديمي، تهدف إلى حماية الطلاب والباحثين">
+    <meta name="keywords" content="حل المنازعات الأكاديمي, النزاعات الأكاديمية, حماية الباحثين, نظام بلاغات, التحكيم الأكاديمي">
+    <meta name="author" content="منصة إنجاز أكاديمي">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://scam.enjazacademy.org/">
+    <meta property="og:title" content="نظام حل المنازعات الأكاديمي - حماية المجتمع الأكاديمي">
+    <meta property="og:description" content="منصة متخصصة في حل المنازعات والنزاعات في المجال الأكاديمي، تهدف إلى حماية الطلاب والباحثين">
+    <meta property="og:image" content="https://scam.enjazacademy.org/assets/images/favicon.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://scam.enjazacademy.org/">
+    <meta property="twitter:title" content="نظام حل المنازعات الأكاديمي - حماية المجتمع الأكاديمي">
+    <meta property="twitter:description" content="منصة متخصصة في حل المنازعات والنزاعات في المجال الأكاديمي، تهدف إلى حماية الطلاب والباحثين">
+    <meta property="twitter:image" content="https://scam.enjazacademy.org/assets/images/favicon.png">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader">
+            <div class="spinner"></div>
+            <p>جاري تحميل النظام...</p>
+        </div>
+    </div>
+
+    <!-- Notifications Container -->
+    <div class="notifications-container" id="notificationsContainer"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Logo -->
+            <div class="nav-brand">
+                <a href="#report" class="logo">
+                    <div class="logo-icon">
+                        <img src="assets/images/favicon.png" alt="شعار نظام حل المنازعات الأكاديمي">
+                    </div>
+                    <div class="logo-text">
+                        <span class="logo-primary">نظام حل المنازعات الأكاديمي</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <div class="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="#report" class="nav-link active"><i class="fas fa-home"></i> الرئيسية</a></li>
+                    <li><a href="#report" class="nav-link"><i class="fas fa-user-plus"></i> تسجيل جديد</a></li>
+                    <li><a href="#search" class="nav-link"><i class="fas fa-search"></i> البحث والاستعلام</a></li>
+                    <li><a href="#delete" class="nav-link"><i class="fas fa-trash-alt"></i> طلب حذف</a></li>
+                    <li><a href="#about" class="nav-link"><i class="fas fa-info-circle"></i> عن النظام</a></li>
+                </ul>
+                
+
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-header">
+            <div class="mobile-logo">
+                <img src="assets/images/favicon.png" alt="شعار نظام حل المنازعات الأكاديمي">
+                <span>نظام حل المنازعات الأكاديمي</span>
+            </div>
+            <button class="mobile-close" id="mobileClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="mobile-nav-content">
+            <a href="#report" class="mobile-nav-link active">
+                <i class="fas fa-home"></i>
+                <span>الرئيسية</span>
+            </a>
+            <a href="#report" class="mobile-nav-link">
+                <i class="fas fa-user-plus"></i>
+                <span>تسجيل جديد</span>
+            </a>
+            <a href="#search" class="mobile-nav-link">
+                <i class="fas fa-search"></i>
+                <span>البحث والاستعلام</span>
+            </a>
+            <a href="#delete" class="mobile-nav-link">
+                <i class="fas fa-trash-alt"></i>
+                <span>طلب حذف</span>
+            </a>
+            <a href="#about" class="mobile-nav-link">
+                <i class="fas fa-info-circle"></i>
+                <span>عن النظام</span>
+            </a>
+            
+
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Report Section -->
+        <section id="report" class="report-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i class="fas fa-user-plus"></i>
+                        تسجيل جديد
+                    </h2>
+                    <p class="section-subtitle">ساهم في حماية المجتمع الأكاديمي عبر تسجيل الشكاوى والمنازعات</p>
+                </div>
+
+                <!-- Progress Steps -->
+                <div class="progress-steps">
+                    <div class="progress-step active" data-step="1">
+                        <div class="step-number">1</div>
+                        <div class="step-info">
+                            <div class="step-title">بيانات المشكو منه</div>
+                            <div class="step-description">المعلومات الأساسية</div>
+                        </div>
+                    </div>
+                    <div class="progress-step" data-step="2">
+                        <div class="step-number">2</div>
+                        <div class="step-info">
+                            <div class="step-title">الأدلة والصور</div>
+                            <div class="step-description">رفع المستندات</div>
+                        </div>
+                    </div>
+                    <div class="progress-step" data-step="3">
+                        <div class="step-number">3</div>
+                        <div class="step-info">
+                            <div class="step-title">التأكيد والحفظ</div>
+                            <div class="step-description">مراجعة وتسجيل</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 1: Basic Information -->
+                <div class="form-step active" id="step1">
+                    <div class="form-card">
+                        <div class="form-card-header">
+                            <h3><i class="fas fa-user-edit"></i> بيانات المشكو منه الأساسية</h3>
+                            <p>املأ المعلومات الأساسية للمشكو منه المراد تسجيله</p>
+                        </div>
+                        
+                        <div class="form-card-body">
+                            <div class="form-grid">
+                                <!-- Name -->
+                                <div class="form-group">
+                                    <label for="scammerName" class="form-label">
+                                        <i class="fas fa-user"></i>
+                                        الاسم الكامل
+                                    </label>
+                                    <input type="text" id="scammerName" class="form-control"
+                                        placeholder="أدخل الاسم الكامل للمشكو منه">
+                                    <div class="form-hint">يجب أن يحتوي على الأقل على 3 أحرف ولا يزيد عن 20 حرفاً</div>
+                                </div>
+                                
+                                <!-- Phone -->
+                                <div class="form-group">
+                                    <label for="scammerPhone" class="form-label">
+                                        <i class="fas fa-phone"></i>
+                                        رقم الواتساب <span class="required">*</span>
+                                    </label>
+                                    <input type="tel" id="scammerPhone" class="form-control"
+                                           placeholder="مثال: 201234567890 (مصر)" required>
+                                    <div class="form-hint">أدخل رقم الواتساب مع كود الدولة العربية والبادئة الصحيحة (مصر:201xxxxxxx، السعودية:9665xxxxxxx)</div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-grid">
+                                <!-- Email -->
+                                <div class="form-group">
+                                    <label for="scammerEmail" class="form-label">
+                                        <i class="fas fa-envelope"></i>
+                                        البريد الإلكتروني
+                                    </label>
+                                    <input type="email" id="scammerEmail" class="form-control" 
+                                           placeholder="example@domain.com">
+                                </div>
+                                
+                                <!-- Scam Type -->
+                                <div class="form-group">
+                                    <label for="scammerType" class="form-label">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                        نوع الشكوي <span class="required">*</span>
+                                    </label>
+                                    <select id="scammerType" class="form-control" required>
+                                        <option value="" disabled selected>اختر نوع الشكوي</option>
+                                        <option value="سرقة أبحاث">سرقة أبحاث</option>
+                                        <option value="التزوير في الوثائق">التزوير في الوثائق</option>
+                                        <option value="الاحتيال المالي">الاحتيال المالي</option>
+                                        <option value="انتحال شخصية أكاديمية">انتحال شخصية أكاديمية</option>
+                                        <option value="أخرى">أخرى</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <!-- Details -->
+                            <div class="form-group">
+                                <label for="scammerDetails" class="form-label">
+                                    <i class="fas fa-info-circle"></i>
+                                    تفاصيل الشكوي <span class="required">*</span>
+                                </label>
+                                <textarea id="scammerDetails" class="form-control" rows="4"
+                                          placeholder="صف تفاصيل الشكوي، الطريقة المستخدمة، المتضررين، وغيرها من المعلومات المهمة..."
+                                          required></textarea>
+                                <div class="form-footer">
+                                    <span class="char-count">
+                                        <span id="detailsCount">0</span> / 1000 حرف
+                                    </span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-grid">
+                                <!-- Reporter Name -->
+                                <div class="form-group">
+                                    <label for="reporterName" class="form-label">
+                                        <i class="fas fa-user-check"></i>
+                                        اسم المبلغ
+                                    </label>
+                                    <input type="text" id="reporterName" class="form-control"
+                                           placeholder="أدخل اسمك">
+                                </div>
+                                
+                                <!-- Reporter Contact -->
+                                <div class="form-group">
+                                    <label for="reporterContact" class="form-label">
+                                        <i class="fas fa-address-book"></i>
+                                        رقم الواتساب <span class="required">*</span>
+                                    </label>
+                                    <input type="tel" id="reporterContact" class="form-control"
+                                           placeholder="رقم الواتساب مع كود الدولة" required>
+                                </div>
+                            </div>
+                            
+                            <!-- Form Actions -->
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-primary btn-next" id="nextToStep2">
+                                    التالي <i class="fas fa-arrow-left"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Images and Evidence -->
+                <div class="form-step" id="step2">
+                    <div class="form-card">
+                        <div class="form-card-header">
+                            <h3><i class="fas fa-images"></i> الأدلة والصور</h3>
+                            <p>قم برفع الصور الداعمة لشكواك لتسهيل عملية حل النزاع</p>
+                        </div>
+
+                        <div class="form-card-body">
+                            <!-- Primary Image Section -->
+                            <div class="primary-image-section">
+                                <div class="section-divider">
+                                    <h4><i class="fas fa-user-circle"></i> صورة المشكو منه</h4>
+                                    <span class="optional-badge">اختياري</span>
+                                </div>
+                                <p class="section-description">ارفع صورة شخصية واضحة للمشكو منه للمساعدة في التعرف عليه (اختياري)</p>
+
+                                <div class="primary-image-container">
+                                    <div class="circular-image-upload" id="scammerImageUpload">
+                                        <input type="file" id="scammerImageInput" accept="image/*" class="file-input">
+                                        <div class="circular-preview" id="scammerImagePreview">
+                                            <div class="preview-placeholder">
+                                                <i class="fas fa-user-plus"></i>
+                                                <span>انقر لإضافة صورة</span>
+                                            </div>
+                                        </div>
+                                        <div class="image-actions">
+                                            <button class="btn btn-outline btn-sm" id="removeScammerImageBtn" style="display: none;">
+                                                <i class="fas fa-trash"></i> حذف الصورة
+                                            </button>
+                                        </div>
+                                        <div class="upload-hint">
+                                            <small>اسحب الصورة هنا أو انقر للاختيار</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Evidence Images Section -->
+                            <div class="evidence-section">
+                                <div class="section-divider">
+                                    <h4><i class="fas fa-file-image"></i> صور الأدلة والوثائق</h4>
+                                    <span class="required-badge">مطلوب</span>
+                                </div>
+                                <p class="section-description">ارفع صور الوثائق والأدلة الداعمة لشكواك (مطلوب صورة واحدة على الأقل، حتى 8 صور)</p>
+
+                                <div class="evidence-upload-container">
+                                    <label for="evidenceImagesInput" class="evidence-drop-zone" id="evidenceDropZone">
+                                        <input type="file" id="evidenceImagesInput" accept="image/*" multiple style="display: none;">
+                                        <div class="drop-zone-icon">
+                                            <i class="fas fa-images"></i>
+                                        </div>
+                                        <div class="drop-zone-text">
+                                            <p>انقر لاختيار صور الأدلة أو اسحبها هنا</p>
+                                            <small>يمكنك رفع عدة صور مرة واحدة</small>
+                                        </div>
+                                    </label>
+
+                                    <div class="evidence-grid" id="evidenceGrid">
+                                        <!-- Evidence images will be added here dynamically -->
+                                    </div>
+
+                                    <div class="evidence-controls">
+                                        <div class="evidence-stats">
+                                            <span class="evidence-count">
+                                                <i class="fas fa-images"></i>
+                                                <span id="evidenceCount">0</span> / 8 صور
+                                            </span>
+                                        </div>
+                                        <div class="evidence-actions">
+                                            <button type="button" class="btn btn-outline btn-sm" id="clearAllEvidence">
+                                                <i class="fas fa-trash-alt"></i> حذف الكل
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Form Actions -->
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-outline" id="backToStep1">
+                                    <i class="fas fa-arrow-right"></i> السابق
+                                </button>
+                                <button type="button" class="btn btn-primary" id="nextToStep3">
+                                    التالي <i class="fas fa-arrow-left"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: Verification and Save -->
+                <div class="form-step" id="step3">
+                    <div class="form-card">
+                        <div class="form-card-header">
+                            <h3><i class="fas fa-check-circle"></i> التأكيد والحفظ</h3>
+                            <p>راجع المعلومات وقم بالتحقق قبل الحفظ النهائي</p>
+                        </div>
+                        
+                        <div class="form-card-body">
+                            <!-- Verification Info -->
+                            <div class="verification-section">
+                                <h4><i class="fas fa-clipboard-check"></i> المعلومات المدخلة</h4>
+                                <div class="verification-grid">
+                                    <div class="verification-item">
+                                        <span class="verification-label">اسم المشكو منه:</span>
+                                        <span class="verification-value" id="verifyName">-</span>
+                                    </div>
+                                    <div class="verification-item">
+                                        <span class="verification-label">رقم الهاتف:</span>
+                                        <span class="verification-value" id="verifyPhone">-</span>
+                                    </div>
+                                    <div class="verification-item">
+                                        <span class="verification-label">نوع الشكوي:</span>
+                                        <span class="verification-value" id="verifyType">-</span>
+                                    </div>
+                                    <div class="verification-item">
+                                        <span class="verification-label">اسم المبلغ:</span>
+                                        <span class="verification-value" id="verifyReporter">-</span>
+                                    </div>
+                                </div>
+
+                                <!-- Images Section -->
+                                <div class="verification-images-section">
+                                    <h4><i class="fas fa-images"></i> الصور المرفوعة</h4>
+                                    <div class="verification-images-grid">
+                                        <div class="verification-image-item">
+                                            <span class="verification-image-label">صورة المشكو منه:</span>
+                                            <div class="verification-image-preview" id="verificationScammerImage">
+                                                <span class="text-muted">لم يتم رفع صورة</span>
+                                            </div>
+                                        </div>
+                                        <div class="verification-image-item">
+                                            <span class="verification-image-label">صور الأدلة:</span>
+                                            <div class="verification-evidence-preview" id="verificationEvidenceImages">
+                                                <span class="text-muted">لم يتم رفع أدلة</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            <!-- Form Actions -->
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-outline" id="backToStep2">
+                                    <i class="fas fa-arrow-right"></i> السابق
+                                </button>
+                                <button type="button" class="btn btn-success btn-lg" id="submitReportBtn">
+                                    <i class="fas fa-save"></i> حفظ التقرير
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Search Section -->
+        <section id="search" class="search-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i class="fas fa-search"></i>
+                        البحث والاستعلام
+                    </h2>
+                    <p class="section-subtitle">ابحث عن المشكو منهم المؤكدين والمسجلين رسمياً في قاعدة البيانات باستخدام طرق متعددة</p>
+                </div>
+                
+                <div class="search-container">
+                    <!-- Unified Search Interface -->
+                    <div class="unified-search-interface">
+                        <!-- Primary Search: Phone -->
+                        <div class="primary-search-section">
+                            <h3 class="search-section-title">
+                                <i class="fas fa-search"></i>
+                                البحث الأساسي
+                            </h3>
+                            <div class="search-input-container">
+                                <div class="input-with-icon">
+                                    <i class="fas fa-phone"></i>
+                                    <input type="tel" id="phoneSearchInput" class="search-input"
+                                           placeholder="أدخل رقم الهاتف الكامل مع كود الدولة...">
+                                </div>
+                                <button class="btn btn-primary" id="phoneSearchBtn">
+                                    <i class="fas fa-search"></i>
+                                    بحث
+                                </button>
+                            </div>
+                            <div class="search-hint">
+                                <i class="fas fa-info-circle"></i>
+                                <span>أمثلة: 20123456789 (مصر: 201+8 أرقام)، 966512345678 (السعودية: 9665+8 أرقام)</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Advanced Search: Image Only -->
+                        <div class="advanced-search-section">
+                            <h3 class="search-section-title">
+                                <i class="fas fa-image"></i>
+                                البحث المتقدم بالصورة
+                            </h3>
+                            <p class="search-section-description">
+                                استخدم صورة واضحة للمشكو منه للبحث في قاعدة البيانات المؤكدة والرسمية
+                            </p>
+                            
+                            <div class="image-search-container">
+                                <div class="circular-image-search-upload">
+                                    <div class="circular-preview" id="imageSearchPreview">
+                                        <div class="preview-placeholder">
+                                            <i class="fas fa-cloud-upload-alt"></i>
+                                            <span>انقر لإضافة صورة</span>
+                                        </div>
+                                    </div>
+                                    <div class="image-actions">
+                                        <button type="button" class="btn btn-outline" id="browseImageBtn">
+                                            <i class="fas fa-folder-open"></i> تصفح الصور
+                                        </button>
+                                        <button type="button" class="btn btn-outline" id="clearImageBtn" style="display: none;">
+                                            <i class="fas fa-trash"></i> حذف الصورة
+                                        </button>
+                                    </div>
+                                    <input type="file" id="imageSearchInput" accept="image/*" class="file-input">
+                                    <div class="upload-hint">
+                                        <small>اسحب الصورة هنا أو انقر للاختيار - يدعم JPG, PNG, WEBP - الحد الأقصى 5MB</small>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="search-actions">
+                                <button class="btn btn-primary" id="advancedSearchBtn" disabled>
+                                    <i class="fas fa-search"></i>
+                                    بحث بالصورة
+                                </button>
+                                <button class="btn btn-outline" id="clearAdvancedSearch" disabled>
+                                    <i class="fas fa-times"></i>
+                                    مسح الصورة
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Search Results -->
+                <div class="search-results-container">
+                    <div class="results-header">
+                        <h3 class="results-title">
+                            <i class="fas fa-list"></i>
+                            نتائج البحث
+                        </h3>
+                        <div class="results-info">
+                            <span class="results-count" id="resultsCount">أدخل معايير البحث للعثور على المشكو منهم</span>
+                            <div class="results-actions">
+                                <button class="btn btn-outline btn-sm" id="clearResultsBtn" style="display: none;">
+                                    <i class="fas fa-times"></i> مسح النتائج
+                                </button>
+                                <button class="btn btn-primary btn-sm" id="addNewReportBtn" style="display: none;">
+                                    <i class="fas fa-plus"></i> إضافة بلاغ جديد
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Search Summary -->
+                    <div class="search-summary" id="searchSummary" style="display: none;">
+                        <div class="summary-card">
+                            <div class="summary-icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div class="summary-content">
+                                <h4>تفاصيل البحث</h4>
+                                <p id="searchQueryDetails">-</p>
+                                <span class="search-timestamp" id="searchTimestamp">-</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="results-content">
+                        <div class="results-grid" id="resultsGrid">
+                            <!-- Results will be loaded here -->
+                            <div class="no-results" id="noResults">
+                                <div class="no-results-content">
+                                    <i class="fas fa-search"></i>
+                                    <h4>ابدأ بالبحث الآن</h4>
+                                    <p>استخدم البحث الأساسي أو البحث المتقدم للعثور على المشكو منهم المؤكدين رسمياً</p>
+                                    <div class="search-tips">
+                                        <h5>نصائح للبحث الفعال:</h5>
+                                        <ul>
+                                            <li><i class="fas fa-check"></i> استخدم رقم الهاتف مع كود الدولة</li>
+                                            <li><i class="fas fa-check"></i> اختر صور واضحة للمشكو منه</li>
+                                            <li><i class="fas fa-check"></i> استخدم البحث المتقدم للحصول على دقة أكبر</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Results Pagination -->
+                        <div class="results-pagination" id="resultsPagination" style="display: none;">
+                            <button class="pagination-btn" id="prevPage">
+                                <i class="fas fa-arrow-right"></i> السابق
+                            </button>
+                            <div class="pagination-pages">
+                                <span id="currentPage">1</span> من <span id="totalPages">1</span>
+                            </div>
+                            <button class="pagination-btn" id="nextPage">
+                                التالي <i class="fas fa-arrow-left"></i>
+                            </button>
+                        </div>
+                        
+                        <!-- Loading Indicator -->
+                        <div class="search-loading" id="searchLoading" style="display: none;">
+                            <div class="loading-spinner">
+                                <i class="fas fa-spinner fa-spin"></i>
+                            </div>
+                            <p>جاري البحث...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Delete Request Section -->
+        <section id="delete" class="delete-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i class="fas fa-trash-alt"></i>
+                        طلب حذف البيانات
+                    </h2>
+                    <p class="section-subtitle">يمكنك طلب حذف بياناتك الشخصية أو تصحيح المعلومات المسجلة</p>
+                </div>
+                
+                <div class="delete-container">
+                    <div class="delete-form-container">
+                        <!-- Verification Step -->
+                        <div class="form-step active" id="verificationStep">
+                            <div class="form-card">
+                                <div class="form-card-header">
+                                    <h3><i class="fas fa-user-check"></i> التحقق من هوية مقدم الطلب</h3>
+                                    <p>يجب التحقق من هويتك كمقدم طلب أصلي قبل تقديم طلب الحذف</p>
+                                </div>
+                                
+                                <div class="form-card-body">
+                                    <div class="verification-info">
+                                        <div class="info-alert">
+                                            <i class="fas fa-shield-alt"></i>
+                                            <p>لضمان أمن البيانات، يجب التحقق من أنك مقدم الطلب الأصلي للتقرير</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-grid">
+                                        <div class="form-group">
+                                            <label for="verifyApplicantName" class="form-label">
+                                                <i class="fas fa-user"></i>
+                                                اسم مقدم الطلب
+                                            </label>
+                                            <input type="text" id="verifyApplicantName" class="form-control"
+                                                   placeholder="الاسم الذي تم تسجيله كمقدم طلب">
+                                            <div class="form-hint">ملاحظة: الاسم اختياري، البحث يتم فقط برقم واتساب مقدم الطلب</div>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="verifyApplicantWhatsApp" class="form-label">
+                                                <i class="fab fa-whatsapp"></i>
+                                                رقم واتساب مقدم الطلب <span class="required">*</span>
+                                            </label>
+                                            <input type="tel" id="verifyApplicantWhatsApp" class="form-control"
+                                                   placeholder="رقم واتساب الذي تم تسجيله" required>
+                                            <div class="form-hint">يجب أن يكون رقم واتساب مقدم الطلب مع كود الدولة العربية الصحيحة</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-actions">
+                                        <button type="button" class="btn btn-primary" id="verifyIdentityBtn">
+                                            <i class="fas fa-user-check"></i>
+                                            التحقق من الهوية
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Delete Request Form -->
+                        <div class="form-step" id="deleteRequestStep">
+                            <div class="form-card">
+                                <div class="form-card-header">
+                                    <h3><i class="fas fa-edit"></i> طلب حذف البيانات</h3>
+                                    <p>املأ النموذج التالي لطلب حذف أو تصحيح البيانات</p>
+                                </div>
+                                
+                                <div class="form-card-body">
+                                    <div class="form-group">
+                                        <label for="deleteReason" class="form-label">
+                                            <i class="fas fa-comment-alt"></i>
+                                            سبب طلب الحذف <span class="required">*</span>
+                                        </label>
+                                        <textarea id="deleteReason" class="form-control" rows="4"
+                                                  placeholder="يرجى توضيح سبب طلب حذف البيانات (مثل: تم حل المشكلة، خطأ في التسجيل، إلخ)..."
+                                                  required></textarea>
+                                    </div>
+                                    
+                                    <div class="form-grid">
+                                        <div class="form-group">
+                                            <label for="applicantName" class="form-label">
+                                                <i class="fas fa-user"></i>
+                                                اسم مقدم الطلب <span class="required">*</span>
+                                            </label>
+                                            <input type="text" id="applicantName" class="form-control"
+                                                   placeholder="اسمك الكامل" readonly>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="applicantContact" class="form-label">
+                                                <i class="fab fa-whatsapp"></i>
+                                                رقم واتساب للتواصل <span class="required">*</span>
+                                            </label>
+                                            <input type="tel" id="applicantContact" class="form-control"
+                                                   placeholder="رقم واتساب للتواصل" readonly>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="scammerWhatsApp" class="form-label">
+                                            <i class="fab fa-whatsapp"></i>
+                                            رقم واتساب الشخص المشكو منه <span class="required">*</span>
+                                        </label>
+                                        <input type="tel" id="scammerWhatsApp" class="form-control"
+                                               placeholder="رقم واتساب الشخص المشكو منه" required>
+                                    </div>
+                                    
+                                    <div class="form-actions">
+                                        <button type="button" class="btn btn-primary" id="submitDeleteRequest">
+                                            <i class="fas fa-paper-plane"></i>
+                                            إرسال طلب الحذف
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i class="fas fa-info-circle"></i>
+                        عن النظام
+                    </h2>
+                    <p class="section-subtitle">
+                        نظام حل المنازعات الأكاديمية هو منصة إلكترونية متخصصة في فض المنازعات وحل الخلافات بين الأطراف في المجتمع الأكاديمي والعلمي
+                    </p>
+                </div>
+
+                <div class="about-content">
+                    <!-- Contact Information -->
+                    <div class="contact-info-section">
+                        <div class="contact-card">
+                            <div class="contact-header">
+                                <h3><i class="fas fa-headset"></i> تواصل معنا</h3>
+                            </div>
+                            <div class="contact-content">
+                                <p>
+                                    إذا كان لديك أي أسئلة أو استفسارات حول شروط الخدمة، لا تتردد في التواصل معنا:
+                                </p>
+
+                                <div class="contact-options">
+                                    <div class="contact-option">
+                                        <i class="fas fa-envelope"></i>
+                                        <div>
+                                            <strong>البريد الإلكتروني:</strong>
+                                            <a href="mailto:Scam@enjazacademy.org">Scam@enjazacademy.org</a>
+                                            <small>للاستفسارات القانونية</small>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="contact-option">
+                                        <i class="fas fa-globe"></i>
+                                        <div>
+                                            <strong>الموقع الرسمي:</strong>
+                                            <a href="https://enjazacademy.org" target="_blank">enjazacademy.org</a>
+                                            <small>للخدمات الأكاديمية</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mission & Vision -->
+                    <div class="mission-vision-section">
+                        <div class="mission-card">
+                            <div class="mission-header">
+                                <h3><i class="fas fa-target"></i> الرسالة والرؤية</h3>
+                            </div>
+                            <div class="mission-content">
+                                <div class="mission-item">
+                                    <h4>الرسالة</h4>
+                                    <p>
+                                        توفير بيئة أكاديمية آمنة وشفافة من خلال نظام إلكتروني موثوق يحمي حقوق الباحثين والطلاب
+                                        ويسهل عملية حل المنازعات بطريقة مهنية وعادلة.
+                                    </p>
+                                </div>
+                                <div class="vision-item">
+                                    <h4>الرؤية</h4>
+                                    <p>
+                                        أن نكون المنصة الرائدة في المنطقة العربية لحل المنازعات الأكاديمية،
+                                        ونبني مجتمعاً أكاديمياً يتسم بالثقة والتعاون والابتكار.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- System Overview -->
+                    <div class="system-overview">
+                        <div class="overview-card">
+                            <div class="overview-header">
+                                <h3><i class="fas fa-building"></i> نظرة عامة على النظام</h3>
+                            </div>
+                            <div class="overview-content">
+                                <p>
+                                    يُعد نظام حل المنازعات الأكاديمية منصة موثوقة وآمنة مصممة خصيصاً لخدمة المجتمع الأكاديمي في الدول العربية.
+                                    النظام يعتمد على مبدأ التحقق المزدوج والمراجعة المهنية لضمان دقة المعلومات وعدالة الإجراءات.
+                                </p>
+                                <p>
+                                    <strong>لماذا هذا الاسم؟</strong><br>
+                                    اخترنا تسمية "نظام حل المنازعات" بدلاً من "نظام مكافحة النصب" لأن الهدف الأساسي هو حل الخلافات وحفظ الحقوق،
+                                    وليس بالضرورة أن يكون كل خلاف ناتج عن نية إجرامية، بل قد يكون سوء فهم أو خطأ غير مقصود.
+                                </p>
+                                <div class="system-stats">
+                                    <div class="stat-item">
+                                        <div class="stat-number">100%</div>
+                                        <div class="stat-label">خصوصية البيانات</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-number">24/7</div>
+                                        <div class="stat-label">متاح دائماً</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-number">عربي</div>
+                                        <div class="stat-label">دعم كامل</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Core Features -->
+                    <div class="features-section">
+                        <h3 class="features-title"><i class="fas fa-star"></i> المميزات الأساسية للنظام</h3>
+                        <div class="features-grid">
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <h4>أمان وحماية متقدمة</h4>
+                                <p>
+                                    نظام أمان متعدد الطبقات يضمن سرية البيانات وحمايتها من الوصول غير المصرح به،
+                                    مع تشفير شامل لجميع المعلومات المخزنة.
+                                </p>
+                            </div>
+
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-search"></i>
+                                </div>
+                                <h4>بحث واستعلام متقدم</h4>
+                                <p>
+                                    إمكانيات بحث متعددة تشمل البحث برقم الهاتف أو البحث بالصورة باستخدام تقنيات الذكاء الاصطناعي
+                                    لتحديد الهوية بدقة عالية.
+                                </p>
+                            </div>
+
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <h4>حل المنازعات العادل</h4>
+                                <p>
+                                    آلية موثوقة لحل الخلافات الأكاديمية من خلال تحكيم محايد ومراجعة شاملة للأدلة والوثائق
+                                    المقدمة من جميع الأطراف.
+                                </p>
+                            </div>
+
+                            <div class="feature-card">
+                                <div class="feature-icon">
+                                    <i class="fas fa-check-double"></i>
+                                </div>
+                                <h4>التحقق المزدوج</h4>
+                                <p>
+                                    نظام مراجعة ثنائية المستوى يضمن دقة المعلومات قبل نشرها، مع إمكانية الطعن في القرارات
+                                    وطلب إعادة المراجعة.
+                                </p>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <!-- How It Works -->
+                    <div class="how-it-works">
+                        <h3 class="works-title"><i class="fas fa-cogs"></i> آلية عمل النظام</h3>
+                        <div class="works-layout">
+                            <!-- Left Column - 2 Steps -->
+                            <div class="works-column works-left">
+                                <div class="work-step">
+                                    <div class="step-number">1</div>
+                                    <div class="step-content">
+                                        <h4>التسجيل والتوثيق</h4>
+                                        <p>
+                                            يقوم مقدم البلاغ بتعبئة النموذج الإلكتروني مع تقديم الأدلة والوثائق الداعمة بشكل منظم ومفصل.
+                                            النظام يتحقق من صحة البيانات الأساسية قبل الموافقة على الإرسال.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="work-step">
+                                    <div class="step-number">4</div>
+                                    <div class="step-content">
+                                        <h4>القرار والتوثيق</h4>
+                                        <p>
+                                            بعد اكتمال التحقيق، يتم اتخاذ القرار المناسب وتوثيقه في قاعدة البيانات.
+                                            يتم إشعار جميع الأطراف بالقرار مع شرح الأسباب والأدلة المعتمدة.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Center Column - 1 Step -->
+                            <div class="works-column works-center">
+                                <div class="work-step">
+                                    <div class="step-number">3</div>
+                                    <div class="step-content">
+                                        <h4>التحقيق والتحقق</h4>
+                                        <p>
+                                            مرحلة التحقق المتعمق تشمل التواصل مع الأطراف المعنية والتحقق من صحة الأدلة المقدمة.
+                                            قد تشمل هذه المرحلة مقابلات أو طلب وثائق إضافية عند الحاجة.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right Column - 2 Steps -->
+                            <div class="works-column works-right">
+                                <div class="work-step">
+                                    <div class="step-number">2</div>
+                                    <div class="step-content">
+                                        <h4>المراجعة الأولية</h4>
+                                        <p>
+                                            يقوم فريق متخصص بمراجعة البلاغ الأولية والتحقق من اكتمال الوثائق المطلوبة.
+                                            في حالة النقص، يتم إشعار مقدم البلاغ لاستكمال البيانات المطلوبة.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="work-step">
+                                    <div class="step-number">5</div>
+                                    <div class="step-content">
+                                        <h4>النشر والمتابعة</h4>
+                                        <p>
+                                            في حالة التأكيد، يتم نشر المعلومات في قاعدة البيانات العامة مع ضمان عدم الكشف عن هوية مقدم البلاغ.
+                                            النظام يوفر إمكانية المتابعة والطعن في القرارات.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Legal Framework -->
+                    <div class="legal-framework">
+                        <div class="framework-card">
+                            <div class="framework-header">
+                                <h3><i class="fas fa-gavel"></i> الإطار القانوني والأخلاقي</h3>
+                            </div>
+                            <div class="framework-content">
+                                <p>
+                                    يعمل النظام وفقاً للقوانين والأنظمة المعمول بها في الدول العربية، مع الالتزام الصارم بمبادئ الخصوصية وحماية البيانات.
+                                    جميع الإجراءات تتم بطريقة عادلة وشفافة، مع الحرص على عدم انتهاك حقوق الأفراد.
+                                </p>
+                                <div class="legal-layout">
+                                    <!-- Left Column - 1 Point -->
+                                    <div class="legal-column legal-left">
+                                        <div class="legal-point">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>الالتزام بقوانين حماية البيانات في الدول العربية</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Center Column - 1 Point -->
+                                    <div class="legal-column legal-center">
+                                        <div class="legal-point">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>عدم الكشف عن هوية مقدمي البلاغات</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Right Column - 2 Points -->
+                                    <div class="legal-column legal-right">
+                                        <div class="legal-point">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>الشفافية في الإجراءات والقرارات</span>
+                                        </div>
+                                        <div class="legal-point">
+                                            <i class="fas fa-check-circle"></i>
+                                            <span>حق الطعن في القرارات والحصول على إعادة مراجعة</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Admin Section -->
+        <section id="admin" class="admin-section" style="display: none;">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2 class="section-title">
+                        <i class="fas fa-cogs"></i>
+                        لوحة الإدارة
+                    </h2>
+                    <p class="section-subtitle">إدارة التقارير المعلقة وطلبات الحذف</p>
+                </div>
+                
+                <div class="admin-container">
+                    <!-- Admin Navigation -->
+                    <div class="admin-nav">
+                        <div class="admin-nav-tabs">
+                            <button class="admin-tab-btn active" data-tab="pending-reports">
+                                <i class="fas fa-clock"></i>
+                                التقارير المعلقة
+                            </button>
+                            <button class="admin-tab-btn" data-tab="delete-requests">
+                                <i class="fas fa-trash-alt"></i>
+                                طلبات الحذف
+                            </button>
+                            <button class="admin-tab-btn" data-tab="confirmed-cases">
+                                <i class="fas fa-shield-check"></i>
+                                الحالات المؤكدة
+                            </button>
+                            <button class="admin-tab-btn" data-tab="statistics">
+                                <i class="fas fa-chart-bar"></i>
+                                الإحصائيات
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Pending Reports Tab -->
+                    <div class="admin-tab-content active" id="pending-reports">
+                        <div class="admin-tab-header">
+                            <h3><i class="fas fa-clock"></i> التقارير المعلقة</h3>
+                            <p>مراجعة وتأكيد التقارير الجديدة</p>
+                        </div>
+                        
+                        <div class="admin-content">
+                            <div class="admin-filters">
+                                <div class="filter-group">
+                                    <label for="pendingSearchInput">البحث:</label>
+                                    <input type="text" id="pendingSearchInput" placeholder="البحث بالاسم أو رقم الهاتف...">
+                                </div>
+                                <div class="filter-group">
+                                    <label for="pendingSortSelect">ترتيب حسب:</label>
+                                    <select id="pendingSortSelect">
+                                        <option value="created_at">تاريخ التسجيل</option>
+                                        <option value="scammer_name">اسم المشكو منه</option>
+                                        <option value="scam_type">نوع النصب</option>
+                                    </select>
+                                </div>
+                                <button class="btn btn-outline" id="refreshPendingBtn">
+                                    <i class="fas fa-refresh"></i> تحديث
+                                </button>
+                            </div>
+                            
+                            <div class="admin-list-container">
+                                <div class="admin-list" id="pendingReportsList">
+                                    <!-- Pending reports will be loaded here -->
+                                    <div class="admin-empty-state">
+                                        <i class="fas fa-inbox"></i>
+                                        <h4>لا توجد تقارير معلقة</h4>
+                                        <p>جميع التقارير تمت مراجعتها</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Delete Requests Tab -->
+                    <div class="admin-tab-content" id="delete-requests">
+                        <div class="admin-tab-header">
+                            <h3><i class="fas fa-trash-alt"></i> طلبات الحذف</h3>
+                            <p>مراجعة ومعالجة طلبات حذف البيانات</p>
+                        </div>
+                        
+                        <div class="admin-content">
+                            <div class="admin-filters">
+                                <div class="filter-group">
+                                    <label for="deleteSearchInput">البحث:</label>
+                                    <input type="text" id="deleteSearchInput" placeholder="البحث بالاسم أو رقم الهاتف...">
+                                </div>
+                                <div class="filter-group">
+                                    <label for="deleteStatusSelect">الحالة:</label>
+                                    <select id="deleteStatusSelect">
+                                        <option value="">جميع الحالات</option>
+                                        <option value="pending">معلق</option>
+                                        <option value="approved">موافق عليه</option>
+                                        <option value="rejected">مرفوض</option>
+                                        <option value="processed">تم المعالجة</option>
+                                    </select>
+                                </div>
+                                <button class="btn btn-outline" id="refreshDeleteBtn">
+                                    <i class="fas fa-refresh"></i> تحديث
+                                </button>
+                            </div>
+                            
+                            <div class="admin-list-container">
+                                <div class="admin-list" id="deleteRequestsList">
+                                    <!-- Delete requests will be loaded here -->
+                                    <div class="admin-empty-state">
+                                        <i class="fas fa-inbox"></i>
+                                        <h4>لا توجد طلبات حذف</h4>
+                                        <p>جميع طلبات الحذف تمت مراجعتها</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Confirmed Cases Tab -->
+                    <div class="admin-tab-content" id="confirmed-cases">
+                        <div class="admin-tab-header">
+                            <h3><i class="fas fa-shield-check"></i> الحالات المؤكدة</h3>
+                            <p>عرض جميع الحالات المؤكدة في قاعدة البيانات</p>
+                        </div>
+                        
+                        <div class="admin-content">
+                            <div class="admin-filters">
+                                <div class="filter-group">
+                                    <label for="confirmedSearchInput">البحث:</label>
+                                    <input type="text" id="confirmedSearchInput" placeholder="البحث بالاسم أو رقم الهاتف...">
+                                </div>
+                                <div class="filter-group">
+                                    <label for="confirmedSortSelect">ترتيب حسب:</label>
+                                    <select id="confirmedSortSelect">
+                                        <option value="confirmation_date">تاريخ التأكيد</option>
+                                        <option value="scammer_name">اسم المشكو منه</option>
+                                        <option value="scam_type">نوع النصب</option>
+                                    </select>
+                                </div>
+                                <button class="btn btn-outline" id="refreshConfirmedBtn">
+                                    <i class="fas fa-refresh"></i> تحديث
+                                </button>
+                            </div>
+                            
+                            <div class="admin-list-container">
+                                <div class="admin-list" id="confirmedCasesList">
+                                    <!-- Confirmed cases will be loaded here -->
+                                    <div class="admin-empty-state">
+                                        <i class="fas fa-shield-alt"></i>
+                                        <h4>لا توجد حالات مؤكدة</h4>
+                                        <p>قم بتأكيد بعض التقارير أولاً</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Statistics Tab -->
+                    <div class="admin-tab-content" id="statistics">
+                        <div class="admin-tab-header">
+                            <h3><i class="fas fa-chart-bar"></i> الإحصائيات</h3>
+                            <p>إحصائيات شاملة عن النظام</p>
+                        </div>
+                        
+                        <div class="admin-content">
+                            <div class="stats-grid">
+                                <div class="stat-card">
+                                    <div class="stat-icon">
+                                        <i class="fas fa-file-alt"></i>
+                                    </div>
+                                    <div class="stat-content">
+                                        <h4 id="totalPendingReports">0</h4>
+                                        <p>تقارير معلقة</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="stat-card">
+                                    <div class="stat-icon">
+                                        <i class="fas fa-shield-check"></i>
+                                    </div>
+                                    <div class="stat-content">
+                                        <h4 id="totalConfirmedCases">0</h4>
+                                        <p>حالات مؤكدة</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="stat-card">
+                                    <div class="stat-icon">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </div>
+                                    <div class="stat-content">
+                                        <h4 id="totalDeleteRequests">0</h4>
+                                        <p>طلبات حذف</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="stat-card">
+                                    <div class="stat-icon">
+                                        <i class="fas fa-calendar-day"></i>
+                                    </div>
+                                    <div class="stat-content">
+                                        <h4 id="todayReports">0</h4>
+                                        <p>تقارير اليوم</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="charts-container">
+                                <div class="chart-card">
+                                    <h4>التقارير حسب النوع</h4>
+                                    <div id="scamTypesChart" class="chart-placeholder">
+                                        <p>سيتم عرض المخطط هنا</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="chart-card">
+                                    <h4>النشاط اليومي</h4>
+                                    <div id="dailyActivityChart" class="chart-placeholder">
+                                        <p>سيتم عرض المخطط هنا</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <!-- Brand Info -->
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="assets/images/favicon.png" alt="شعار نظام حل المنازعات الأكاديمي">
+                    </div>
+                    <p class="footer-description">
+                        منصة متخصصة في حل المنازعات والنزاعات في المجال الأكاديمي،
+                        تهدف إلى حماية الطلاب والباحثين عبر توفير قاعدة بيانات موثقة.
+                    </p>
+                    <div class="social-links">
+
+                        <a href="mailto:Scam@enjazacademy.org" class="social-link">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://web.facebook.com/profile.php?id=61575190847489&locale=ar_AR" target="_blank" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="footer-links">
+                    <div class="links-column">
+                        <h5>روابط سريعة</h5>
+                        <ul>
+                            <li><a href="#report">الرئيسية</a></li>
+                            <li><a href="#report">تسجيل جديد</a></li>
+                            <li><a href="#search">البحث والاستعلام</a></li>
+                            <li><a href="#delete">طلب حذف بيانات</a></li>
+                            <li><a href="#about">عن النظام</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="links-column">
+                        <h5>خدمات إنجاز أكاديمي</h5>
+                        <ul>
+                            <li><a href="https://enjazacademy.org" target="_blank">الأبحاث العلمية</a></li>
+                            <li><a href="https://enjazacademy.org" target="_blank">الترجمة الأكاديمية</a></li>
+                            <li><a href="https://enjazacademy.org" target="_blank">التحليل الإحصائي</a></li>
+                            <li><a href="https://enjazacademy.org" target="_blank">التدقيق اللغوي</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="links-column">
+                        <h5>معلومات قانونية</h5>
+                        <ul>
+                            <li><a href="privacy.html">سياسة الخصوصية</a></li>
+                            <li><a href="terms.html">شروط الخدمة</a></li>
+                            <li><a href="database-security-documentation.html">التوثيق الأمني</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>جميع الحقوق محفوظة © 2025 <a href="https://enjazacademy.org" target="_blank" style="color: #0B5EA8; font-weight: bold;">منصة إنجاز أكاديمي</a></p>
+                    <p class="brand-note">هذا الموقع محمي بموجب قانون الألفية للملكية الرقمية (DMCA)</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/201153832862" target="_blank" class="whatsapp-float" title="للتواصل مع أكاديمية إنجاز أكاديمي">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scroll to Top -->
+    <button class="scroll-top" id="scrollTopBtn" title="للانتقال إلى أعلى">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Image Modal -->
+    <div class="modal" id="imageModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>معاينة الصورة</h3>
+                <button class="modal-close" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <img id="modalImage" src="" alt="صورة مكبرة">
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

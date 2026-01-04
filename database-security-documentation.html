@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التوثيق الأمني لقاعدة البيانات - نظام حل المنازعات الأكاديمية</title>
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Meta Tags -->
+    <meta name="description" content="التوثيق الأمني لقاعدة البيانات - نظام حل المنازعات الأكاديمية - تعرف على إجراءات الأمان والحماية المطبقة">
+    <meta name="keywords" content="التوثيق الأمني, قاعدة البيانات, أمان البيانات, نظام حل المنازعات الأكاديمية, الحماية الأمنية">
+    <meta name="author" content="منصة إنجاز أكاديمي">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <!-- Logo -->
+            <div class="nav-brand">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">
+                        <img src="assets/images/favicon.png" alt="شعار نظام حل المنازعات الأكاديمية">
+                    </div>
+                    <div class="logo-text">
+                        <span class="logo-primary">نظام حل المنازعات الأكاديمي</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <div class="nav-menu">
+                <ul class="nav-links">
+                    <li><a href="index.html#report" class="nav-link"><i class="fas fa-home"></i> الرئيسية</a></li>
+                    <li><a href="index.html#report" class="nav-link"><i class="fas fa-user-plus"></i> تسجيل جديد</a></li>
+                    <li><a href="index.html#search" class="nav-link"><i class="fas fa-search"></i> البحث والاستعلام</a></li>
+                    <li><a href="index.html#delete" class="nav-link"><i class="fas fa-trash-alt"></i> طلب حذف</a></li>
+                    <li><a href="index.html#about" class="nav-link"><i class="fas fa-info-circle"></i> عن النظام</a></li>
+                </ul>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-header">
+            <div class="mobile-logo">
+                <img src="assets/images/favicon.png" alt="شعار نظام حل المنازعات الأكاديمية">
+                <span>نظام حل المنازعات الأكاديمي</span>
+            </div>
+            <button class="mobile-close" id="mobileClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <div class="mobile-nav-content">
+            <a href="index.html#report" class="mobile-nav-link">
+                <i class="fas fa-home"></i>
+                <span>الرئيسية</span>
+            </a>
+            <a href="index.html#report" class="mobile-nav-link">
+                <i class="fas fa-user-plus"></i>
+                <span>تسجيل جديد</span>
+            </a>
+            <a href="index.html#search" class="mobile-nav-link">
+                <i class="fas fa-search"></i>
+                <span>البحث والاستعلام</span>
+            </a>
+            <a href="index.html#delete" class="mobile-nav-link">
+                <i class="fas fa-trash-alt"></i>
+                <span>طلب حذف</span>
+            </a>
+            <a href="index.html#about" class="mobile-nav-link">
+                <i class="fas fa-info-circle"></i>
+                <span>عن النظام</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Security Documentation Section -->
+        <section class="security-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <h1 class="section-title">
+                        <i class="fas fa-database"></i>
+                        التوثيق الأمني لقاعدة البيانات
+                    </h1>
+                    <p class="section-subtitle">
+                        دليل شامل لإجراءات الأمان والحماية المطبقة على قاعدة بيانات نظام حل المنازعات الأكاديمية
+                    </p>
+                </div>
+
+                <div class="security-content">
+                    <!-- Introduction -->
+                    <div class="security-intro">
+                        <div class="intro-card">
+                            <div class="intro-header">
+                                <h2><i class="fas fa-shield-alt"></i> نظرة عامة على الأمان</h2>
+                            </div>
+                            <div class="intro-content">
+                                <p>
+                                    يعتمد نظام حل المنازعات الأكاديمية على بنية أمنية متقدمة متعددة الطبقات لحماية البيانات الحساسة
+                                    والمعلومات الشخصية للمستخدمين. هذا التوثيق يوضح الإجراءات الأمنية المطبقة على مستوى قاعدة البيانات.
+                                </p>
+                                <div class="intro-highlights">
+                                    <div class="highlight-item">
+                                        <i class="fas fa-lock"></i>
+                                        <span>تشفير شامل للبيانات</span>
+                                    </div>
+                                    <div class="highlight-item">
+                                        <i class="fas fa-user-shield"></i>
+                                        <span>تحكم صارم في الوصول</span>
+                                    </div>
+                                    <div class="highlight-item">
+                                        <i class="fas fa-eye"></i>
+                                        <span>مراقبة مستمرة</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Database Architecture -->
+                    <div class="security-section-card">
+                        <div class="section-card-header">
+                            <h3><i class="fas fa-sitemap"></i> بنية قاعدة البيانات</h3>
+                        </div>
+                        <div class="section-card-content">
+                            <p>تعتمد قاعدة البيانات على PostgreSQL مع بنية أمنية محكمة:</p>
+
+                            <div class="architecture-components">
+                                <div class="component">
+                                    <div class="component-icon">
+                                        <i class="fas fa-server"></i>
+                                    </div>
+                                    <div class="component-details">
+                                        <h4>PostgreSQL Server</h4>
+                                        <ul>
+                                            <li>إصدار PostgreSQL 15+ مع آخر التحديثات الأمنية</li>
+                                            <li>تشغيل على نظام Linux مع kernel hardening</li>
+                                            <li>عزل كامل عن الخوادم الأخرى</li>
+                                            <li>تحديثات أمنية تلقائية</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="component">
+                                    <div class="component-icon">
+                                        <i class="fas fa-network-wired"></i>
+                                    </div>
+                                    <div class="component-details">
+                                        <h4>شبكة محمية</h4>
+                                        <ul>
+                                            <li>VPN مخصص للوصول إلى قاعدة البيانات</li>
+                                            <li>جدران حماية متعددة الطبقات (Firewall)</li>
+                                            <li>نظام كشف الاقتحام (IDS/IPS)</li>
+                                            <li>عناوين IP محدودة للوصول</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="component">
+                                    <div class="component-icon">
+                                        <i class="fas fa-hdd"></i>
+                                    </div>
+                                    <div class="component-details">
+                                        <h4>تخزين مشفر</h4>
+                                        <ul>
+                                            <li>تشفير كامل للأقراص (Full Disk Encryption)</li>
+                                            <li>نسخ احتياطي مشفر ومضغوط</li>
+                                            <li>تخزين خارجي آمن للنسخ الاحتياطية</li>
+                                            <li>فحص دوري لسلامة البيانات</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Authentication & Access Control -->
+                    <div class="security-section-card">
+                        <div class="section-card-header">
+                            <h3><i class="fas fa-key"></i> المصادقة والتحكم في الوصول</h3>
+                        </div>
+                        <div class="section-card-content">
+                            <div class="auth-methods">
+                                <div class="auth-method">
+                                    <i class="fas fa-user-lock"></i>
+                                    <h4>مصادقة قاعدة البيانات</h4>
+                                    <p>استخدام PostgreSQL roles مع كلمات مرور معقدة وتغيير دوري</p>
+                                </div>
+
+                                <div class="auth-method">
+                                    <i class="fas fa-fingerprint"></i>
+                                    <h4>مصادقة متعددة العوامل</h4>
+                                    <p>2FA مطلوب لجميع الوصولات الإدارية عن بعد</p>
+                                </div>
+
+                                <div class="auth-method">
+                                    <i class="fas fa-clock"></i>
+                                    <h4>انتهاء الجلسات</h4>
+                                    <p>انتهاء تلقائي للجلسات غير النشطة بعد 15 دقيقة</p>
+                                </div>
+                            </div>
+
+                            <div class="access-control">
+                                <h4>مستويات الوصول:</h4>
+                                <div class="access-levels">
+                                    <div class="access-level">
+                                        <div class="level-badge admin">مدير</div>
+                                        <div class="level-info">
+                                            <h5>صلاحيات كاملة</h5>
+                                            <p>قراءة، كتابة، تعديل، حذف - للجداول الرئيسية فقط</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="access-level">
+                                        <div class="level-badge moderator">مشرف</div>
+                                        <div class="level-info">
+                                            <h5>صلاحيات محدودة</h5>
+                                            <p>قراءة وكتابة - للجداول المؤكدة فقط</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="access-level">
+                                        <div class="level-badge application">التطبيق</div>
+                                        <div class="level-info">
+                                            <h5>صلاحيات برمجية</h5>
+                                            <p>قراءة وكتابة محدودة - عبر API آمن فقط</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Data Encryption -->
+                    <div class="security-section-card">
+                        <div class="section-card-header">
+                            <h3><i class="fas fa-lock"></i> تشفير البيانات</h3>
+                        </div>
+                        <div class="section-card-content">
+                            <p>نطبق تشفيراً شاملاً على جميع مستويات البيانات:</p>
+
+                            <div class="encryption-layers">
+                                <div class="encryption-layer">
+                                    <div class="layer-icon">
+                                        <i class="fas fa-exchange-alt"></i>
+                                    </div>
+                                    <div class="layer-details">
+                                        <h4>تشفير النقل (TLS 1.3)</h4>
+                                        <ul>
+                                            <li>جميع الاتصالات مشفرة بـ TLS 1.3</li>
+                                            <li>شهادات SSL صالحة من جهات موثوقة</li>
+                                            <li>منع الاتصالات غير المشفرة</li>
+                                            <li>فحص أمني للاتصالات</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="encryption-layer">
+                                    <div class="layer-icon">
+                                        <i class="fas fa-database"></i>
+                                    </div>
+                                    <div class="layer-details">
+                                        <h4>تشفير قاعدة البيانات</h4>
+                                        <ul>
+                                            <li>تشفير البيانات في حالة الراحة (TDE)</li>
+                                            <li>تشفير الحقول الحساسة (PII)</li>
+                                            <li>مفاتيح تشفير متجددة دورياً</li>
+                                            <li>إدارة آمنة للمفاتيح</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="encryption-layer">
+                                    <div class="layer-icon">
+                                        <i class="fas fa-file-archive"></i>
+                                    </div>
+                                    <div class="layer-details">
+                                        <h4>تشفير النسخ الاحتياطية</h4>
+                                        <ul>
+                                            <li>تشفير النسخ الاحتياطية أثناء التخزين</li>
+                                            <li>نقل آمن للنسخ الاحتياطية</li>
+                                            <li>فحص سلامة البيانات المشفرة</li>
+                                            <li>سياسة الاحتفاظ بالنسخ القديمة</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Audit & Monitoring -->
+                    <div class="security-section-card">
+                        <div class="section-card-header">
+                            <h3><i class="fas fa-eye"></i> التدقيق والمراقبة</h3>
+                        </div>
+                        <div class="section-card-content">
+                            <div class="audit-system">
+                                <div class="audit-header">
+                                    <i class="fas fa-search"></i>
+                                    <h4>نظام تدقيق شامل</h4>
+                                </div>
+                                <p>نسجل جميع العمليات المهمة لأغراض الأمان والامتثال:</p>
+                            </div>
+
+                            <div class="audit-activities">
+                                <div class="audit-category">
+                                    <h5>عمليات تسجيل الدخول</h5>
+                                    <ul>
+                                        <li>تسجيل محاولات الدخول الناجحة والفاشلة</li>
+                                        <li>تتبع عناوين IP والأجهزة</li>
+                                        <li>كشف محاولات الاختراق</li>
+                                        <li>تنبيهات الأمان الفورية</li>
+                                    </ul>
+                                </div>
+
+                                <div class="audit-category">
+                                    <h5>عمليات البيانات</h5>
+                                    <ul>
+                                        <li>تسجيل جميع عمليات CRUD</li>
+                                        <li>تتبع التغييرات على البيانات الحساسة</li>
+                                        <li>سجلات النسخ الاحتياطي</li>
+                                        <li>عمليات حذف البيانات</li>
+                                    </ul>
+                                </div>
+
+                                <div class="audit-category">
+                                    <h5>عمليات النظام</h5>
+                                    <ul>
+                                        <li>تسجيل عمليات الصيانة</li>
+                                        <li>مراقبة الأداء والأخطاء</li>
+                                        <li>تنبيهات الصحة النظامية</li>
+                                        <li>سجلات التحديثات</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="monitoring-tools">
+                                <h4>أدوات المراقبة:</h4>
+                                <div class="monitoring-grid">
+                                    <div class="monitoring-tool">
+                                        <i class="fas fa-chart-line"></i>
+                                        <span>مراقبة الأداء في الوقت الفعلي</span>
+                                    </div>
+                                    <div class="monitoring-tool">
+                                        <i class="fas fa-bell"></i>
+                                        <span>تنبيهات الأمان التلقائية</span>
+                                    </div>
+                                    <div class="monitoring-tool">
+                                        <i class="fas fa-shield-alt"></i>
+                                        <span>كشف التهديدات المتقدم</span>
+                                    </div>
+                                    <div class="monitoring-tool">
+                                        <i class="fas fa-file-alt"></i>
+                                        <span>تقارير الأمان الشهرية</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Backup & Recovery -->
+                    <div class="security-section-card">
+                        <div class="section-card-header">
+                            <h3><i class="fas fa-save"></i> النسخ الاحتياطي والاستعادة</h3>
+                        </div>
+                        <div class="section-card-content">
+                            <div class="backup-strategy">
+                                <h4>استراتيجية النسخ الاحتياطي:</h4>
+                                <div class="backup-types">
+                                    <div class="backup-type">
+                                        <div class="backup-icon">
+                                            <i class="fas fa-clock"></i>
+                                        </div>
+                                        <div class="backup-info">
+                                            <h5>نسخ احتياطي يومي</h5>
+                                            <p>نسخ كامل لقاعدة البيانات يومياً في الساعة 2:00 صباحاً</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="backup-type">
+                                        <div class="backup-icon">
+                                            <i class="fas fa-calendar-week"></i>
+                                        </div>
+                                        <div class="backup-info">
+                                            <h5>نسخ احتياطي أسبوعي</h5>
+                                            <p>نسخ تفاضلي كل يوم جمعة مع الاحتفاظ لمدة 4 أسابيع</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="backup-type">
+                                        <div class="backup-icon">
+                                            <i class="fas fa-calendar-alt"></i>
+                                        </div>
+                                        <div class="backup-info">
+                                            <h5>نسخ احتياطي شهري</h5>
+                                            <p>نسخ كامل في أول يوم من كل شهر مع الاحتفاظ لمدة عام</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="recovery-procedures">
+                                <h4>إجراءات الاستعادة:</h4>
+                                <div class="recovery-steps">
+                                    <div class="recovery-step">
+                                        <span class="step-number">1</span>
+                                        <div class="step-content">
+                                            <h5>تقييم الحادث</h5>
+                                            <p>تحديد نوع ونطاق فقدان البيانات</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="recovery-step">
+                                        <span class="step-number">2</span>
+                                        <div class="step-content">
+                                            <h5>عزل النظام</h5>
+                                            <p>عزل النظام المتضرر لمنع انتشار الضرر</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="recovery-step">
+                                        <span class="step-number">3</span>
+                                        <div class="step-content">
+                                            <h5>استعادة البيانات</h5>
+                                            <p>استعادة من آخر نسخة احتياطية سليمة</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="recovery-step">
+                                        <span class="step-number">4</span>
+                                        <div class="step-content">
+                                            <h5>التحقق والاختبار</h5>
+                                            <p>فحص سلامة البيانات المستعادة</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Security Testing -->
+                    <div class="security-section-card">
+                        <div class="section-card-header">
+                            <h3><i class="fas fa-vial"></i> اختبارات الأمان</h3>
+                        </div>
+                        <div class="section-card-content">
+                            <p>نجري اختبارات أمنية منتظمة لضمان سلامة النظام:</p>
+
+                            <div class="testing-procedures">
+                                <div class="testing-type">
+                                    <div class="testing-icon">
+                                        <i class="fas fa-search"></i>
+                                    </div>
+                                    <div class="testing-details">
+                                        <h4>فحص الثغرات</h4>
+                                        <ul>
+                                            <li>فحص شهري باستخدام أدوات OWASP</li>
+                                            <li>فحص يدوي للثغرات المعروفة</li>
+                                            <li>تقييم المخاطر والتوصيات</li>
+                                            <li>إصلاح فوري للثغرات الحرجة</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="testing-type">
+                                    <div class="testing-icon">
+                                        <i class="fas fa-user-secret"></i>
+                                    </div>
+                                    <div class="testing-details">
+                                        <h4>اختبار الاختراق</h4>
+                                        <ul>
+                                            <li>اختبار سنوي من شركات أمنية متخصصة</li>
+                                            <li>محاكاة هجمات حقيقية</li>
+                                            <li>تقرير مفصل بالنتائج والتوصيات</li>
+                                            <li>تحسين مستمر للدفاعات</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="testing-type">
+                                    <div class="testing-icon">
+                                        <i class="fas fa-balance-scale"></i>
+                                    </div>
+                                    <div class="testing-details">
+                                        <h4>الامتثال والتدقيق</h4>
+                                        <ul>
+                                            <li>تدقيق سنوي للامتثال الأمني</li>
+                                            <li>فحص الامتثال لمعايير GDPR</li>
+                                            <li>تقارير الامتثال للجهات الرقابية</li>
+                                            <li>تحديث السياسات حسب المتطلبات</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Incident Response -->
+                    <div class="security-section-card">
+                        <div class="section-card-header">
+                            <h3><i class="fas fa-exclamation-triangle"></i> الاستجابة للحوادث</h3>
+                        </div>
+                        <div class="section-card-content">
+                            <div class="incident-response">
+                                <h4>خطة الاستجابة للحوادث الأمنية:</h4>
+
+                                <div class="response-phases">
+                                    <div class="response-phase">
+                                        <div class="phase-icon">
+                                            <i class="fas fa-search"></i>
+                                        </div>
+                                        <div class="phase-content">
+                                            <h5>الكشف والتقييم</h5>
+                                            <p>كشف الحادث وتقييم نطاقه وتأثيره</p>
+                                            <small>الوقت المستهدف: أقل من 15 دقيقة</small>
+                                        </div>
+                                    </div>
+
+                                    <div class="response-phase">
+                                        <div class="phase-icon">
+                                            <i class="fas fa-shield-alt"></i>
+                                        </div>
+                                        <div class="phase-content">
+                                            <h5>الاحتواء والعزل</h5>
+                                            <p>عزل النظام المتضرر ومنع انتشار الضرر</p>
+                                            <small>الوقت المستهدف: أقل من ساعة</small>
+                                        </div>
+                                    </div>
+
+                                    <div class="response-phase">
+                                        <div class="phase-icon">
+                                            <i class="fas fa-tools"></i>
+                                        </div>
+                                        <div class="phase-content">
+                                            <h5>القضاء والاستعادة</h5>
+                                            <p>إزالة التهديد واستعادة النظام الطبيعي</p>
+                                            <small>الوقت المستهدف: أقل من 4 ساعات</small>
+                                        </div>
+                                    </div>
+
+                                    <div class="response-phase">
+                                        <div class="phase-icon">
+                                            <i class="fas fa-chart-line"></i>
+                                        </div>
+                                        <div class="phase-content">
+                                            <h5>التعلم والتحسين</h5>
+                                            <p>تحليل الحادث وتحسين الإجراءات الأمنية</p>
+                                            <small>الوقت المستهدف: خلال أسبوع</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="incident-reporting">
+                                <h4>الإبلاغ عن الحوادث:</h4>
+                                <div class="reporting-contacts">
+                                    <div class="contact-email">
+                                        <i class="fas fa-envelope"></i>
+                                        <div>
+                                            <strong>البريد الأمني:</strong>
+                                            <span>Scam@enjazacademy.org</span>
+                                            <small>للإبلاغ عن الحوادث الأمنية</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Compliance & Standards -->
+                    <div class="security-section-card">
+                        <div class="section-card-header">
+                            <h3><i class="fas fa-certificate"></i> الامتثال والمعايير</h3>
+                        </div>
+                        <div class="section-card-content">
+                            <p>نلتزم بأعلى المعايير الأمنية والقانونية:</p>
+
+                            <div class="compliance-standards">
+                                <div class="standard-item">
+                                    <div class="standard-icon">
+                                        <i class="fas fa-european-union"></i>
+                                    </div>
+                                    <div class="standard-details">
+                                        <h4>GDPR</h4>
+                                        <p>الامتثال الكامل للائحة حماية البيانات العامة الأوروبية</p>
+                                    </div>
+                                </div>
+
+                                <div class="standard-item">
+                                    <div class="standard-icon">
+                                        <i class="fas fa-lock"></i>
+                                    </div>
+                                    <div class="standard-details">
+                                        <h4>ISO 27001</h4>
+                                        <p>معايير إدارة أمن المعلومات الدولية</p>
+                                    </div>
+                                </div>
+
+                                <div class="standard-item">
+                                    <div class="standard-icon">
+                                        <i class="fas fa-shield-alt"></i>
+                                    </div>
+                                    <div class="standard-details">
+                                        <h4>SOC 2</h4>
+                                        <p>معايير الأمان والخصوصية في السحابة</p>
+                                    </div>
+                                </div>
+
+                                <div class="standard-item">
+                                    <div class="standard-icon">
+                                        <i class="fas fa-gavel"></i>
+                                    </div>
+                                    <div class="standard-details">
+                                        <h4>قانون مكافحة الجرائم الإلكترونية</h4>
+                                        <p>الامتثال لقوانين جمهورية مصر العربية</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Security Updates -->
+                    <div class="security-section-card">
+                        <div class="section-card-header">
+                            <h3><i class="fas fa-sync-alt"></i> التحديثات الأمنية</h3>
+                        </div>
+                        <div class="section-card-content">
+                            <div class="update-schedule">
+                                <h4>جدول التحديثات الأمنية:</h4>
+
+                                <div class="update-frequency">
+                                    <div class="update-item">
+                                        <i class="fas fa-clock"></i>
+                                        <div>
+                                            <strong>تحديثات أمنية عاجلة:</strong>
+                                            <span>فورية - خلال 24 ساعة من الإعلان</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="update-item">
+                                        <i class="fas fa-calendar-week"></i>
+                                        <div>
+                                            <strong>تحديثات أسبوعية:</strong>
+                                            <span>كل يوم جمعة في الساعة 10:00 مساءً</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="update-item">
+                                        <i class="fas fa-calendar-alt"></i>
+                                        <div>
+                                            <strong>تحديثات شهرية:</strong>
+                                            <span>أول يوم من كل شهر</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="update-item">
+                                        <i class="fas fa-calendar-check"></i>
+                                        <div>
+                                            <strong>تقييم شامل:</strong>
+                                            <span>كل 3 أشهر مع تقرير مفصل</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="update-testing">
+                                <h4>اختبار التحديثات:</h4>
+                                <ul>
+                                    <li>اختبار على بيئة التطوير قبل التطبيق</li>
+                                    <li>نسخ احتياطي كامل قبل التحديث</li>
+                                    <li>مراقبة الأداء بعد التحديث</li>
+                                    <li>خطة تراجع في حالة فشل التحديث</li>
+                                </ul>
+                            </div>
+
+                            <div class="last-update">
+                                <p><strong>آخر تحديث أمني:</strong> ديسمبر 2025</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="security-contact">
+                        <div class="contact-card">
+                            <div class="contact-header">
+                                <h3><i class="fas fa-headset"></i> تواصل معنا</h3>
+                            </div>
+                            <div class="contact-content">
+                                <p>
+                                    إذا كان لديك أي أسئلة أو استفسارات حول شروط الخدمة، لا تتردد في التواصل معنا:
+                                </p>
+
+                                <div class="contact-options">
+                                    <div class="contact-option">
+                                        <i class="fas fa-envelope"></i>
+                                        <div>
+                                            <strong>البريد الإلكتروني:</strong>
+                                            <a href="mailto:Scam@enjazacademy.org">Scam@enjazacademy.org</a>
+                                            <small>للاستفسارات القانونية</small>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="contact-option">
+                                        <i class="fas fa-globe"></i>
+                                        <div>
+                                            <strong>الموقع الرسمي:</strong>
+                                            <a href="https://enjazacademy.org" target="_blank">enjazacademy.org</a>
+                                            <small>للخدمات الأكاديمية</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <!-- Brand Info -->
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="assets/images/favicon.png" alt="شعار نظام حل المنازعات الأكاديمية">
+                    </div>
+                    <p class="footer-description">
+                        منصة متخصصة في حل المنازعات والنزاعات في المجال الأكاديمي،
+                        تهدف إلى حماية الطلاب والباحثين عبر توفير قاعدة بيانات موثقة.
+                    </p>
+                    <div class="social-links">
+                        <a href="mailto:Scam@enjazacademy.org" class="social-link">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://chat.whatsapp.com/Gf9GCbd1SW29FDsUMp1Pmg" target="_blank" class="social-link">
+                            <i class="fas fa-users"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-links">
+                    <div class="links-column">
+                        <h5>روابط سريعة</h5>
+                        <ul>
+                            <li><a href="index.html#report">تسجيل جديد</a></li>
+                            <li><a href="index.html#search">البحث والاستعلام</a></li>
+                            <li><a href="index.html#delete">طلب حذف بيانات</a></li>
+                            <li><a href="index.html#about">عن النظام</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="links-column">
+                        <h5>معلومات قانونية</h5>
+                        <ul>
+                            <li><a href="privacy.html">سياسة الخصوصية</a></li>
+                            <li><a href="terms.html">شروط الخدمة</a></li>
+                            <li><a href="database-security-documentation.html">التوثيق الأمني</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="links-column">
+                        <h5>خدمات إنجاز أكاديمي</h5>
+                        <ul>
+                            <li><a href="https://enjazacademy.org" target="_blank">الأبحاث العلمية</a></li>
+                            <li><a href="https://enjazacademy.org" target="_blank">الترجمة الأكاديمية</a></li>
+                            <li><a href="https://enjazacademy.org" target="_blank">التحليل الإحصائي</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>جميع الحقوق محفوظة © 2025 <a href="https://enjazacademy.org" target="_blank" style="color: #0B5EA8; font-weight: bold;">منصة إنجاز أكاديمي</a></p>
+                    <p class="brand-note">هذا الموقع محمي بموجب قانون الألفية للملكية الرقمية (DMCA)</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <button class="scroll-top" id="scrollTopBtn">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
